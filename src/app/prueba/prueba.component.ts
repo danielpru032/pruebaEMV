@@ -60,6 +60,7 @@ export class PruebaComponent {
   }
 
   isDescriptionUnique(newDescription: string): boolean {
+    //si alguna tarea tiene la misma descripción que newDescription, some() devolverá true
     const isUnique = !this.tasks.some(
       (task) => task.description.trim() === newDescription
     );
@@ -100,7 +101,7 @@ export class PruebaComponent {
     console.table(this.tasks);
   }
   voteForTask(task: Task) {
-    task.count = 1; // Establece el contador de la tarea a 1
+    task.count = 1; // contador  1
     console.table(this.tasks);
   }
 }
