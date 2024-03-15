@@ -2,18 +2,24 @@
   <form
     [formGroup]="taskForm"
     (ngSubmit)="editingTaskId ? updateTask() : addTask()"
+    class="task__form"
   >
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="form__inputt">
       <mat-label>Añadir lenguaje de programacion</mat-label>
       <textarea matInput formControlName="description"></textarea>
+
+      <mat-error *ngIf="taskForm.get('description')?.hasError('notUnique')"
+        >El nombre del lenguaje debe ser unico.</mat-error
+      >
     </mat-form-field>
+
     <button
       mat-raised-button
       color="primary"
       type="submit"
       class="form__button"
     >
-      Añadir lenguaje
+      {{ editingTaskId ? "Modificar" : "Añadir" }} Lenguaje
     </button>
   </form>
 

@@ -55,14 +55,19 @@ export class PruebaComponent {
         console.log('La descripción ya existe.');
       }
     }
+
     console.table(this.tasks);
   }
-  // Función para verificar si la descripción es única
+
   isDescriptionUnique(newDescription: string): boolean {
-    // Si alguna tarea tiene la misma descripción, some() devuelve true,
-    return !this.tasks.some(
+    const isUnique = !this.tasks.some(
       (task) => task.description.trim() === newDescription
     );
+    if (!isUnique) {
+      this.taskForm.get('description')?.setErrors({ notUnique: true });
+    }
+
+    return isUnique;
   }
   deleteTask(taskId: number) {
     this.tasks = this.tasks.filter((task) => task.id !== taskId);

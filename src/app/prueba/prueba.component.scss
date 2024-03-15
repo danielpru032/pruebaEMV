@@ -4,17 +4,13 @@
   align-items: center;
   justify-content: center;
 
-  form {
+  .task__form {
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
 
-    mat-form-field {
+    .form__inputt {
       width: 100%;
-    }
-
-    button {
-      margin-right: 10px;
     }
   }
 
@@ -24,10 +20,6 @@
     margin-top: 10px;
     width: 100%;
     max-width: 600px;
-
-    h3 {
-      margin-top: 0;
-    }
   }
 }
 .form__button {
