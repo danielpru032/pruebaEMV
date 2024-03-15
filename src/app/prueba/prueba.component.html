@@ -1,0 +1,36 @@
+<div class="tasks-container">
+  <form
+    [formGroup]="taskForm"
+    (ngSubmit)="editingTaskId ? updateTask() : addTask()"
+  >
+    <mat-form-field appearance="fill">
+      <mat-label>Añadir lenguaje de programacion</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      class="form__button"
+    >
+      Añadir lenguaje
+    </button>
+  </form>
+
+  <div class="results" *ngFor="let task of tasks">
+    <div class="results__left">
+      {{ task.description }} (votos: {{ task.count }})
+    </div>
+    <div class="results__right">
+      <mat-icon (click)="voteForTask(task)" class="icon__vote"
+        >how_to_vote</mat-icon
+      >
+      <mat-icon (click)="editTask(task)" class="icon__edit">
+        border_color</mat-icon
+      >
+      <mat-icon (click)="deleteTask(task.id)" class="icon__delete"
+        >delete</mat-icon
+      >
+    </div>
+  </div>
+</div>

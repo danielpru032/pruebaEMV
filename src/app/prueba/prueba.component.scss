@@ -1,0 +1,59 @@
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  form {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    button {
+      margin-right: 10px;
+    }
+  }
+
+  .results {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+
+    h3 {
+      margin-top: 0;
+    }
+  }
+}
+.form__button {
+  width: 100%;
+}
+.results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.results__right {
+  align-items: end;
+  width: 14rem;
+}
+.icon__vote {
+  color: #159dd3;
+  padding: 0.5rem;
+  margin-right: 2rem;
+}
+.icon__edit {
+  padding: 0.5rem;
+  color: #1fb449;
+  margin-right: 2rem;
+}
+.icon__delete {
+  padding: 0.5rem;
+  color: #ff2600;
+  margin-right: 2rem;
+}
